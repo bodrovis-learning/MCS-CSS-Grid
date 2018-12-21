@@ -1,0 +1,38 @@
+.container {
+  display: grid;
+  margin: 0 5rem;
+  grid-template-columns: 2fr 6fr 2fr 2fr;
+  grid-template-rows: 5rem;
+  grid-gap: 2rem 1rem;
+  grid-template-areas:
+   "logo logo menu menu"
+   "offer content content posts"
+   "footer footer footer footer";
+}
+
+.logo {
+  grid-area: logo;
+  align-self: center;
+}
+
+.main-menu {
+  grid-area: menu;
+  place-self: center end;
+}
+
+.special-offer {
+  grid-area: offer;
+}
+
+.content-area {
+  grid-area: content;
+}
+
+.latest-posts {
+  grid-area: posts;
+  text-align: right;
+}
+
+.footer {
+  grid-area: footer;
+}
