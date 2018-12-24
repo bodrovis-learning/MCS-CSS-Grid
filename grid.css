@@ -25,24 +25,39 @@
   /* align-self: center;
   justify-self: end; */
   place-self: center end;
+  /* Fallback: */
+  margin-bottom: 1rem;
 }
 
 .special-offer {
   grid-area: offer;
   align-self: center;
+  /* Fallback: */
+  display: inline-block;
+  width: 20%;
+  vertical-align: top;
 }
 
 .special-offer img {
   max-width: 250px;
+  width: 100%;
 }
 
 .content-area {
   grid-area: content;
+  /* Fallback: */
+  display: inline-block;
+  width: 55%;
+  vertical-align: top;
 }
 
 .latest-posts {
   grid-area: posts;
   justify-self: end;
+  /* Fallback: */
+  display: inline-block;
+  width: 24%;
+  vertical-align: top;
 }
 
 .footer {
@@ -61,10 +76,12 @@
 
 .team-member {
   background-color: #fff;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  /* Fallback */
+  margin-bottom: 1rem;
 }
 
 .special {
@@ -93,6 +110,13 @@
 
   .team {
     grid-row-gap: 1rem;
+  }
+
+  /* Fallback */
+  .special-offer, .latest-posts, .content-area {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
   }
 }
 
@@ -132,5 +156,21 @@
 
   .special-offer img {
     max-width: 200px;
+  }
+
+  /* Fallback */
+  .team-member {
+    display: flex;
+  }
+}
+
+@supports (display: grid) {
+  .special-offer, .content-area, .latest-posts {
+    width: auto;
+    margin-bottom: 0;
+  }
+
+  .main-menu, .team-member {
+    margin-bottom: 0;
   }
 }
