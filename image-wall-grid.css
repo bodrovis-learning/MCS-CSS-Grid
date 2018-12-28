@@ -4,7 +4,7 @@
   grid-template-columns: repeat(4, minmax(min-content, max-content));
   grid-gap: 0.5rem 0.5rem;
   grid-auto-rows: minmax(min-content, 250px);
-  grid-auto-flow: row;	
+  grid-auto-flow: row;
 }
 
 .large-img {
@@ -19,4 +19,26 @@
 
 .image-wall .small-img {
   min-width: 250px;
+}
+
+@media all and (max-width: 1200px) {
+  .image-wall {
+    grid-template-columns: repeat(3, minmax(min-content, max-content));
+  }
+}
+
+@media all and (max-width: 768px) {
+  .image-wall {
+    grid-template-columns: repeat(2, minmax(min-content, max-content));
+  }
+}
+
+@media all and (max-width: 540px) {
+  .image-wall {
+    grid-template-columns: auto;
+  }
+
+  .large-img {
+    grid-area: 1/1/2/2;
+  }
 }
