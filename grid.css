@@ -21,5 +21,4 @@ main {
 
 .related-images {
   grid-area: related;
-  place-self: center left;
 }
